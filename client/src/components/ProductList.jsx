@@ -7,13 +7,14 @@ const ProductList = () => {
   const { addNode } = useContext(FlowContext);
 
   useEffect(() => {
-    fetchProducts().then((res) => setProducts(res.data.products));
+    fetchProducts().then((res) =>  setProducts(res.data.products));
   }, []);
+
 
   return (
     <div>
       <h2 className="text-xl font-bold text-gray-800 mb-4">📦 Product Catalog</h2>
-      <div className="space-y-3">
+      <div className="max-h-[550px] overflow-y-auto space-y-3">
         {products.map((product) => (
           <div
             key={product.id}
